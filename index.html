@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="scripts/patent.js"></script>
+    <script type="module" src="scripts/path.js"></script>
+    <script type="module" src="scripts/searchAndDescription.js"></script>
+</head>
+<body>
+<div class="notificationList"></div>
+<div class="head">
+    <div class="logo">
+        <div class="logoFirst">Патентное бюро</div>
+        <div class="logoSecond">Победа</div>
+    </div>
+    <div class="controls">
+        <div class="search-container">
+            <label>
+                <input type="text" class="search-input" placeholder="Введите запрос...">
+                <button class="search-button">Искать</button>
+            </label>
+        </div>
+        <button class="create">Новый патент</button>
+        <div class="settings"><img src="img/settings.svg" alt=""></div>
+    </div>
+</div>
+
+<div class="mainWrapper">
+    <h1 id="DataHeader">Последние патенты (новые)</h1>
+    <div class="patentsList">
+    </div>
+</div>
+
+
+
+</body>
+</html>
