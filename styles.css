@@ -290,9 +290,58 @@ html{
 }
 .buttonForClose{
     background-color: darkred;
-    transform: rotate(405deg);
+    transform: rotate(135deg);
 }
 .buttonForClose:hover{
     background-color: crimson;
     cursor: pointer;
+}
+
+.updateHeaderEdit{
+    padding: 10px;
+    font: 25px var(--patent-descriprion-text-color);
+    font-family: "Roboto", sans-serif;
+}
+.updateHeaderEdit>label{
+    font-size: 20px;
+}
+.updateHeaderEdit>input[type="text"]{
+    font-size: 20px;
+    width: calc(100% - 20px);
+    padding: 5px;
+}
+.updateDescriptionEdit{
+    font: 20px var(--patent-descriprion-text-color);
+    font-family: "Segoe UI", sans-serif;
+    padding: 10px;
+}
+.updateDescriptionEdit>textarea{
+    font: 20px var(--patent-descriprion-text-color);
+    font-family: "Segoe UI", sans-serif;
+    width: calc(100% - 10px);
+    height: 300px;
+    resize: none;
+}
+.updateDescriptionEdit>input[type="submit"]{
+    font: 15px var(--patent-descriprion-text-color);
+    font-family: "Segoe UI", sans-serif;
+    width: 150px;
+    height: 40px;
+    background-color: chartreuse;
+}
+.updateDescriptionEdit>input[type="submit"]:hover{
+
+    background-color: green;
+    cursor: pointer;
+}
+#uElement{
+    transition: all 500ms ease;
+    overflow: hidden;
+}
+.updateHiding{
+
+    height: 10px;
+}
+.updateHidden{
+    display: none;
 }

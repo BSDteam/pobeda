@@ -43,6 +43,26 @@
                 </div>
             </div>
         </div>
+
+        <div class="update updateHidden updateHiding" id="uElement">
+            <form id="uForm" onsubmit="return false">
+                <div class="updateHeaderEdit">
+                    <div>Добавить дополнение к патенту</div>
+                    <label for="uName">Заголовок дополнения</label><br>
+
+                    <input type="text" name="uName" id="uName" placeholder="" required>
+                </div>
+                <div class="updateBody">
+                    <div class="updateDescriptionEdit">
+                        <label for="uDesk">Описание дополнения</label><br>
+                        <textarea name="uDesk" id="uDesk" required></textarea>
+                        <input type="submit" value="Опубликовать" id="uSubmit">
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
         <button class="newUpdateButton">+</button>
     </div>
 </div>
