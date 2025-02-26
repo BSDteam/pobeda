@@ -345,3 +345,14 @@ html{
 .updateHidden{
     display: none;
 }
+.username::before{
+    content: "Здравствуйте, ";
+}
+.username{
+    font: 20px SansSerif sans-serif;
+    text-align: right;
+    padding: 20px;
+    width: 80%;
+    max-width: 900px;
+    height: fit-content;
+}

@@ -49,5 +49,6 @@ function DisplayRecentPatents(){
 window.addEventListener("load", ()=>{
     DisplayRecentPatents();
     initCreatePatentButton();
-    Path.next("Начало", ()=>{}, ()=>DisplayRecentPatents());
+    Path.next("Начало", ()=>{}, ()=>DisplayRecentPatents(), true);
+    document.querySelector(".username").innerText = Database.getMyName();
 })

@@ -6,7 +6,7 @@ export default class PatentOpen {
 
     static initWindow(patentID){
 
-        Path.initWindow("Просмотр Патента#"+patentID, ()=>this.drawWindow(patentID));
+        Path.initWindow("Просмотр Патента#"+patentID, ()=>this.drawWindow(patentID), true);
         this.drawWindow(patentID);
     }
     static drawWindow(patentID){

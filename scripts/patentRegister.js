@@ -5,7 +5,7 @@ import Path from "./path.js";
 
 export default class patentRegister{
     static initWindow(){
-        Path.initWindow("Новый патент", patentRegister.drawWindow);
+        Path.initWindow("Новый патент", patentRegister.drawWindow, true);
         patentRegister.drawWindow();
     }
 
@@ -34,7 +34,6 @@ export default class patentRegister{
             </form>
         </div>
     </div>`;
-        let publishButton = document.getElementById("uSubmit");
         let pName = document.getElementById("uName");
         let pDescription = document.getElementById("uDesk")
         let pForm = document.getElementById("uForm");
