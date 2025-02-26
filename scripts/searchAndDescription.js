@@ -1,40 +1,17 @@
-import Patent from "./patent.js";
-import Path from "./path.js";
+//import Patent from "./patent.js";
+//import Path from "./path.js";
 import Database from "./database.js";
 import PatentOpen from "./PatentOpen.js";
+//import Notifications from "./notifications.js";
+import patentRegister from "./patentRegister.js";
+import Path from "./path.js";
 
 
-function notifyUser(string) {
-    function fade(notification){
-        const FADE_TIME = 500;
-        notification.classList.add("notificationHidden");
-        setTimeout(()=>{notification.remove();}, FADE_TIME);
-    }
-    const EXPIRY_TIME= 5000;
-    let container = document.getElementsByClassName("notificationList")[0];
-    if (container === undefined) {
 
-        container = document.createElement("div");
-        container.classList.add("notificationList");
-        document.body.prepend(container);
-    }
-    let notification = document.createElement("div");
-    notification.classList.add("notificationHidden", "notification");
-    notification.textContent = string;
-    container.prepend(notification);
-    setTimeout(()=>notification.classList.remove("notificationHidden"), 10);
-    setTimeout(fade,EXPIRY_TIME,notification);
-    notification.addEventListener("click", ()=>{fade(notification)})
-}
 
 function createOnClickID(element, id) {
     return ()=>PatentOpen.initWindow(id);
 }
-
-
-
-
-
 
 
 // document.querySelectorAll(".patentHeader").forEach(
@@ -42,18 +19,19 @@ function createOnClickID(element, id) {
 //         element.addEventListener("click", createOnClickID(element));
 //     }
 // ); код из начала создания
+// () => {
+//     let patent = new Patent("Гойда", 123, "Охлобыстин",
+//         "2.1.2020", "Священная война")
+//         .generateElement(createOnClickID);
+//     document.querySelector(".patentsList").prepend(patent);
+//     Path.next("Гойда", () => {
+//         Notifications.notifyUser("Гойда назад, перемога перемога");
+//         patent.remove();
+//     }, ()=>Notifications.notifyUser("Нация спасать!!!!!"))
+// } древний функционал
 function initCreatePatentButton() {
     document.querySelectorAll(".create").forEach((elem) => {
-        elem.addEventListener("click", () => {
-            let patent = new Patent("Гойда", 123, "Охлобыстин",
-                "2.1.2020", "Священная война")
-                .generateElement(createOnClickID);
-            document.querySelector(".patentsList").prepend(patent);
-            Path.next("Гойда", () => {
-                notifyUser("Гойда назад, перемога перемога");
-                patent.remove();
-            })
-        });
+        elem.addEventListener("click", patentRegister.initWindow);
     })
 }
 
@@ -71,4 +49,5 @@ function DisplayRecentPatents(){
 window.addEventListener("load", ()=>{
     DisplayRecentPatents();
     initCreatePatentButton();
+    Path.next("Начало", ()=>{}, ()=>DisplayRecentPatents());
 })

@@ -3,11 +3,16 @@ import PatentUpdate from "./patentUpdate.js";
 import Path from "./path.js";
 
 export default class PatentOpen {
+
     static initWindow(patentID){
+
+        Path.initWindow("Просмотр Патента#"+patentID, ()=>this.drawWindow(patentID));
+        this.drawWindow(patentID);
+    }
+    static drawWindow(patentID){
         let patent = Database.fetchPatentFullByID(patentID); // Читаем базу
         let updates = Database.fetchPatentUpdatesByPatentID(patentID);
 
-        Path.initWindow("Просмотр Патента#"+patentID);
         let wrapper = document.querySelector(".mainWrapper"); // ставим шаблон
         wrapper.innerHTML=`
         <h1>Описание патента</h1>
@@ -51,16 +56,6 @@ export default class PatentOpen {
 
 
 
-// function initTest() {
-//     let editorHandler = new PatentUpdateElement("23425")
-//     const array = document.getElementsByClassName("newUpdateButton");
-//     for (let i = 0; i < array.length; i++) {
-//         array[i].addEventListener("click", () => PatentUpdateElement.buttonMentality(array[i], editorHandler))
-//     }
-//
-//
-// }
-
 class PatentUpdateElement {
     patentID;
     nameField;
@@ -97,7 +92,7 @@ class PatentUpdateElement {
             this.DescriptionField.value
         );
         Database.savePatentUpdate(pUpdate);
-
+        Path.refresh();
     }
 
     hide() {
@@ -113,5 +108,4 @@ class PatentUpdateElement {
     }
 }
 
-// initTest();
 

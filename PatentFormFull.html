@@ -10,51 +10,19 @@
 <body>
 
 <div class="mainWrapper">
-    <h1>Описание патента</h1>
+    <h1>Создать новый патент</h1>
+    <h2>Автор {имя}</h2>
     <div class="patentFullList">
-        <div class="patent" id="003">
-            <div class="patentHeader">
-                <span class="patentName">Экологически чистый способ утилизации пластиковых отходов</span>
-                <span class="patentId">#003</span>
-            </div>
-            <div class="patentBody">
-                <div class="patentAuthor">Алексей Смирнов</div>
-                <div class="patentDate">2023-03-10</div>
-                <div class="patentDescription">Патент на метод переработки пластиковых отходов с минимальным
-                    воздействием на
-                    окружающую среду.
-                </div>
-            </div>
-        </div>
-
-        <div class="update">
-            <div class="updateHeader">
-                <span class="updateId">#3432</span>
-                <span class="updateDate">
-                    9-11-2005
-                </span>
-                <div class="updateName">
-                    Машина апдейт
-                </div>
-            </div>
-            <div class="updateBody">
-                <div class="updateDescription">
-                    Я прикупил огромный байк
-                </div>
-            </div>
-        </div>
-
-        <div class="update updateHidden updateHiding" id="uElement">
+        <div class="update" id="uElement">
             <form id="uForm" onsubmit="return false">
                 <div class="updateHeaderEdit">
-                    <div>Добавить дополнение к патенту</div>
-                    <label for="uName">Заголовок дополнения</label><br>
+                    <label for="uName">Название патента</label><br>
 
                     <input type="text" name="uName" id="uName" placeholder="" required>
                 </div>
                 <div class="updateBody">
                     <div class="updateDescriptionEdit">
-                        <label for="uDesk">Описание дополнения</label><br>
+                        <label for="uDesk">Описание патента</label><br>
                         <textarea name="uDesk" id="uDesk" required></textarea>
                         <input type="submit" value="Опубликовать" id="uSubmit">
                     </div>
@@ -63,7 +31,7 @@
             </form>
 
         </div>
-        <button class="newUpdateButton">+</button>
+
     </div>
 </div>
 </body>
