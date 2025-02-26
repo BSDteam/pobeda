@@ -1,6 +1,7 @@
 import Patent from "./patent.js";
 import Path from "./path.js";
 import Database from "./database.js";
+import PatentOpen from "./PatentOpen.js";
 
 
 function notifyUser(string) {
@@ -27,7 +28,7 @@ function notifyUser(string) {
 }
 
 function createOnClickID(element, id) {
-    return ()=>Path.initWindow(`Патент#${id}`);
+    return ()=>PatentOpen.initWindow(id);
 }
 
 

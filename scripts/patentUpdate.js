@@ -1,4 +1,3 @@
-
 export default class PatentUpdate {
     name;
     id;
@@ -16,5 +15,26 @@ export default class PatentUpdate {
         this.description = description;
     }
 
-
+    generateElement() {
+        let element = document.createElement("div");
+        element.classList.add("update")
+        element.id = this.id
+        element.innerHTML = `
+                
+            <div class="updateHeader">
+                <span class="updateId">#${this.id}</span>
+                <span class="updateDate">
+                    ${this.date}
+                </span>
+                <div class="updateName">
+                    ${this.name}
+                </div>
+            </div>
+            <div class="updateBody">
+                <div class="updateDescription">
+                    ${this.description}
+                </div>
+            </div>`;
+        return element;
+    }
 }

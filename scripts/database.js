@@ -42,4 +42,7 @@ export default class Database{
     static savePatentUpdate(patentUpdate){
         this.#DummyDBPatentsUpdates.push(patentUpdate);
     }
+    static getMyName(){
+        return "Мария Петрова"
+    }
 }
