@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>"Победа" Авторизация</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="head">
+    <div class="logo">
+        <div class="logoFirst">Патентное бюро</div>
+        <div class="logoSecond">Победа</div>
+    </div>
+</div>
+
+<form class="loginForm">
+    <h1>Регистрация</h1>
+    <label for="user">Новый логин</label><br>
+    <input type="text" name="user" id="user"><br>
+    <label for="password">Новый пароль</label><br>
+    <input type="password" name="password" id="password"><br>
+    <label for="email">Электронная почта</label><br>
+    <input type="text" name="email" id="email"><br>
+    <label for="rememberMe">Запомнить меня
+        <input type="checkbox" name="rememberMe" id="rememberMe">
+    </label>
+    <p>Есть учетная запись? <a href="./auth.html">Авторизоваться</a></p>
+
+    <input type="submit" class="registerButton" value="Зарегистрироваться">
+</form>
+<script>
+    let form = document.querySelector(".loginForm")
+    document.addEventListener("mousemove", (event)=>{
+        let coords = form.getClientRects().item(0)
+
+        let centerX = coords.x + coords.width/2;
+        let centerY = coords.y + coords.height/2;
+        let diffX = centerX - event.x;
+        let diffY = centerY - event.y;
+        diffX = 20+10*Math.tanh(diffX/200)
+        diffY = 20+10*Math.tanh(diffY/200)
+        form.style.boxShadow = `#444 ${diffX}px ${diffY}px`
+    })
+</script>
+</body>
+</html>
